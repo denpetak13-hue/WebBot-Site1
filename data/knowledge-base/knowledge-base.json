@@ -1,0 +1,249 @@
+{
+  "_instructions": {
+    "description": "Dog Trainer Assistant - Baza znanja za MVP",
+    "usage": "Popuni sva polja oznacena sa [POPUNI]. Polja koja nisu relevantna za firmu ostavi prazna ili ukloni.",
+    "format": "UTF-8, JSON format. Bot ce koristiti ove podatke kao jedini izvor istine o firmi.",
+    "languages": "Sav sadrzaj unosi na srpskom. Bot ce sam prevoditi odgovore na jezik korisnika."
+  },
+
+  "about": {
+    "school_name": "[POPUNI - Naziv firme/skole dresure pasa]",
+    "tagline": "[POPUNI - Kratki slogan, npr: 'Profesionalna dresura pasa sa ljubavlju i strucnoscu']",
+    "description": "[POPUNI - Opis firme u 3-5 recenica: ko ste, cime se bavite, koliko imate iskustva, sta vas izdvaja od konkurencije]",
+    "founded_year": "[POPUNI - npr. 2015]",
+    "trainers": [
+      {
+        "name": "[POPUNI - Ime i prezime trenera]",
+        "title": "[POPUNI - npr. Sertifikovani trener pasa, Majstor dresure]",
+        "experience_years": "[POPUNI - broj godina iskustva]",
+        "specializations": "[POPUNI - npr. Korekcija ponasanja, Trening mladih pasa, Agility]",
+        "bio": "[POPUNI - Kratka biografija trenera]"
+      }
+    ],
+    "certifications": "[POPUNI - Da li imate sertifikate, licence, clanstvo u udruzenjima? npr. Sertifikat XYZ akademije, Clan Saveza kinologa Srbije]",
+    "philosophy": "[POPUNI - Filozofija rada, metode koje koristite, npr. Koristimo iskljucivo pozitivno potkrepljivanje bez prinude i fizicke kazne]"
+  },
+
+  "contact": {
+    "phone": "[POPUNI - Broj telefona, npr. +381 60 123 4567]",
+    "email": "[POPUNI - Email adresa, npr. info@dogtrainer.rs]",
+    "website": "[POPUNI - URL sajta, npr. www.dogtrainer.rs]",
+    "instagram": "[POPUNI ili ostavi prazno - npr. @dogtrainer_rs]",
+    "facebook": "[POPUNI ili ostavi prazno - npr. facebook.com/dogtrainer.rs]",
+    "address": {
+      "city": "[POPUNI - Grad, npr. Beograd]",
+      "municipality": "[POPUNI ili ostavi prazno - npr. Novi Beograd]",
+      "address_line": "[POPUNI ili ostavi prazno - ulica i broj ako je javna lokacija]",
+      "area_coverage": "[POPUNI - Koje oblasti pokrivate, npr. Ceo Beograd, Novi Sad, online za ostatak Srbije]"
+    },
+    "working_hours": {
+      "weekdays": "[POPUNI - npr. Ponedeljak - Petak: 09:00 - 20:00]",
+      "saturday": "[POPUNI - npr. Subota: 09:00 - 16:00]",
+      "sunday": "[POPUNI - npr. Nedeljom ne radimo ili Nedeljom samo po dogovoru]",
+      "note": "[POPUNI ili ostavi prazno - npr. Termini se zakazuju iskljucivo telefonom ili emailom]"
+    }
+  },
+
+  "services": [
+    {
+      "id": "service_01",
+      "name": "[POPUNI - naziv usluge, npr. Trening Stenaca]",
+      "short_description": "[POPUNI - 1-2 recenice sta ukljucuje]",
+      "full_description": "[POPUNI - detaljniji opis usluge, metode, sta pas uci, sta vlasnik dobija]",
+      "suitable_for": "[POPUNI - Za koga je namenjena, npr. Stenci od 2 do 6 meseci]",
+      "duration": "[POPUNI - Trajanje jednog casa, npr. 45-60 minuta]",
+      "number_of_sessions": "[POPUNI ili ostavi prazno - npr. Preporucujemo minimum 8 casova]",
+      "location_type": "[POPUNI - Individualno kod vas, grupno, online, na lokaciji skole]",
+      "price": "[POPUNI ili stavi null ako ne zelite da se prikazuju cene]",
+      "problems_solved": "[POPUNI - Koji problemi se resavaju ovom uslugom, npr. Socijalizacija, grrizanje, skakanje na ljude, osnove poslusnosti]"
+    },
+    {
+      "id": "service_02",
+      "name": "[POPUNI - npr. Osnovna Poslusnost]",
+      "short_description": "[POPUNI]",
+      "full_description": "[POPUNI]",
+      "suitable_for": "[POPUNI - npr. Psi svih rasa od 6 meseci pa naviše]",
+      "duration": "[POPUNI]",
+      "number_of_sessions": "[POPUNI]",
+      "location_type": "[POPUNI]",
+      "price": "[POPUNI ili null]",
+      "problems_solved": "[POPUNI]"
+    },
+    {
+      "id": "service_03",
+      "name": "[POPUNI - npr. Korekcija Problematicnog Ponasanja]",
+      "short_description": "[POPUNI]",
+      "full_description": "[POPUNI]",
+      "suitable_for": "[POPUNI - npr. Psi sa agresijom, fobijama, anksioznoscu, destruktivnim ponasanjem]",
+      "duration": "[POPUNI]",
+      "number_of_sessions": "[POPUNI]",
+      "location_type": "[POPUNI]",
+      "price": "[POPUNI ili null]",
+      "problems_solved": "[POPUNI]"
+    },
+    {
+      "id": "service_04",
+      "name": "[POPUNI - npr. Individualni Treninzi]",
+      "short_description": "[POPUNI]",
+      "full_description": "[POPUNI]",
+      "suitable_for": "[POPUNI]",
+      "duration": "[POPUNI]",
+      "number_of_sessions": "[POPUNI]",
+      "location_type": "[POPUNI]",
+      "price": "[POPUNI ili null]",
+      "problems_solved": "[POPUNI]"
+    },
+    {
+      "id": "service_05",
+      "name": "[POPUNI - npr. Grupni Treninzi]",
+      "short_description": "[POPUNI]",
+      "full_description": "[POPUNI]",
+      "suitable_for": "[POPUNI]",
+      "duration": "[POPUNI]",
+      "number_of_sessions": "[POPUNI]",
+      "location_type": "[POPUNI]",
+      "price": "[POPUNI ili null]",
+      "problems_solved": "[POPUNI]"
+    },
+    {
+      "id": "service_06",
+      "name": "[POPUNI ili ukloni - npr. Socijalizacija Pasa]",
+      "short_description": "[POPUNI]",
+      "full_description": "[POPUNI]",
+      "suitable_for": "[POPUNI]",
+      "duration": "[POPUNI]",
+      "number_of_sessions": "[POPUNI]",
+      "location_type": "[POPUNI]",
+      "price": "[POPUNI ili null]",
+      "problems_solved": "[POPUNI]"
+    },
+    {
+      "id": "service_07",
+      "name": "[POPUNI ili ukloni - npr. Online Konsultacije]",
+      "short_description": "[POPUNI]",
+      "full_description": "[POPUNI]",
+      "suitable_for": "[POPUNI - npr. Vlasnici koji nisu u mogucnosti da dolaze licno]",
+      "duration": "[POPUNI]",
+      "number_of_sessions": "[POPUNI]",
+      "location_type": "Online (video poziv)",
+      "price": "[POPUNI ili null]",
+      "problems_solved": "[POPUNI]"
+    }
+  ],
+
+  "pricing": {
+    "show_prices": false,
+    "note": "Ako zelite da bot prikazuje cene, postavi show_prices na true i popuni prices listu. Ako ne zelite da bot govori o cenama, ostavi show_prices na false.",
+    "prices": [],
+    "pricing_note": "[POPUNI ili ostavi prazno - npr. Cene zavise od broja casova i vrste treninga. Za tacnu cenu kontaktirajte nas.]"
+  },
+
+  "faq": [
+    {
+      "question": "Sa koliko meseci mogu da pocnem trening svog stenceta?",
+      "answer": "[POPUNI - npr. Trening mozete poceti vec sa 2 meseca starosti. Sto ranije pocnete sa socijalizacijom i osnovnim navikama, to bolje. Mladi psi izuzetno brzo uce.]"
+    },
+    {
+      "question": "Koliko casova je potrebno da bi pas naucio osnove?",
+      "answer": "[POPUNI - npr. Broj casova zavisi od psa, rase, starosti i problema koji se resava. Vecina pasa pokaze napredak vec posle 3-4 casa, ali za trajne rezultate preporucujemo minimum 8-10 casova.]"
+    },
+    {
+      "question": "Da li koristite fizicku kaznu u treningu?",
+      "answer": "[POPUNI - npr. Ne. Radimo iskljucivo metodama pozitivnog potkrepljivanja. Nagrada i motivacija su kljuc uspesnog treninga.]"
+    },
+    {
+      "question": "Da li mozete da dodjete kod mene kuci?",
+      "answer": "[POPUNI - npr. Da, vecina nasih treninga se odvija kod klijenta, jer je za psa najvazniji napredak u svom okruzenju.]"
+    },
+    {
+      "question": "Da li je moguc trening za agresivnog psa?",
+      "answer": "[POPUNI - npr. Da, ali agresija je slozen problem koji zahteva individualnu procenu. Prvim razgovorom utvrdimo uzrok i napravimo plan. Ne garantujemo rezultate bez prethodne procene.]"
+    },
+    {
+      "question": "Kako zakazujem termin?",
+      "answer": "[POPUNI - npr. Termin mozete zakazati pozivom ili porukom na broj XXXXX, ili emailom na XXXXX. Javimo se u roku od 24 sata.]"
+    },
+    {
+      "question": "Da li radite sa svim rasama?",
+      "answer": "[POPUNI - npr. Da, radimo sa psima svih rasa i velicina.]"
+    },
+    {
+      "question": "Sta da donesem na prvi cas?",
+      "answer": "[POPUNI - npr. Dovedite psa na povodcu, ponesite poslastice koje vas pas voli i bubraznik ako koristite. Ne zaboravite da pas bude nahranjen, ali ne pretrpan pre treninga.]"
+    },
+    {
+      "question": "[POPUNI - Dodajte sopstveno pitanje]",
+      "answer": "[POPUNI - Dodajte odgovor]"
+    },
+    {
+      "question": "[POPUNI - Dodajte sopstveno pitanje]",
+      "answer": "[POPUNI - Dodajte odgovor]"
+    }
+  ],
+
+  "behavior_recommendations": {
+    "description": "Mapa problema korisnika na preporucene usluge. Bot ce koristiti ovo da preporuci pravu uslugu.",
+    "mappings": [
+      {
+        "problem_keywords": ["stene", "stenci", "stence", "malo stence", "mali pas", "puppy", "stenac"],
+        "recommended_service_ids": ["service_01"],
+        "bot_note": "[POPUNI - npr. Za stence preporucujemo sto raniji pocetak treninga zbog kriticnog perioda socijalizacije koji traje do 4 meseca starosti.]"
+      },
+      {
+        "problem_keywords": ["ne slusa", "ignorise", "bezi", "ne reaguje na ime", "poslusnost"],
+        "recommended_service_ids": ["service_02", "service_04"],
+        "bot_note": "[POPUNI - npr. Osnovna poslusnost je temelj svakog uspesnog odnosa sa psom. Preporucujemo da pocnemo sa evaluacijom i napravimo plan.]"
+      },
+      {
+        "problem_keywords": ["vuce", "vuce povodac", "lajanjem", "skace na ljude", "skakanje"],
+        "recommended_service_ids": ["service_02", "service_04"],
+        "bot_note": "[POPUNI - npr. Ovo je jedan od najcescih problema i resiv je kroz dosledan rad i pravu tehniku.]"
+      },
+      {
+        "problem_keywords": ["agresija", "agresivan", "grize", "grize ljude", "grize pse", "laje na pse", "napada"],
+        "recommended_service_ids": ["service_03", "service_04"],
+        "bot_note": "[POPUNI - npr. Agresivno ponasanje zahteva individualnu procenu pre nego sto napravimo plan treninga. Bitan nam je uzrok agresije.]"
+      },
+      {
+        "problem_keywords": ["strah", "plasljiv", "anksioznost", "stress", "tresa se", "ne izlazi"],
+        "recommended_service_ids": ["service_03", "service_06"],
+        "bot_note": "[POPUNI - npr. Strah i anksioznost se resavaju postepenom desenzitizacijom i poverenjem. Nije nesto sto treba gurati na silu.]"
+      },
+      {
+        "problem_keywords": ["socijalizacija", "ne voli pse", "ne voli ljude", "ne navikava", "izolovan"],
+        "recommended_service_ids": ["service_06", "service_05"],
+        "bot_note": "[POPUNI - npr. Socijalizacija je kljucna, narocito do godinu dana. Grupni treninzi su odlican nacin za bezbedan kontakt sa drugim psima.]"
+      },
+      {
+        "problem_keywords": ["online", "daleko", "ne mogu da dodjem", "video", "konsultacija"],
+        "recommended_service_ids": ["service_07"],
+        "bot_note": "[POPUNI - npr. Za klijente koji nisu u mogucnosti da dodjuju licno, nudimo online konsultacije putem video poziva.]"
+      }
+    ]
+  },
+
+  "policies": {
+    "cancellation_policy": "[POPUNI - npr. Otkazivanje termina molimo najkasnije 24 sata unapred. Kasno otkazivanje ili nedolazak moze biti naplacen.]",
+    "health_requirements": "[POPUNI - npr. Pas mora biti vakcinisan i redovno odglisavljen. Na cas ne dolazite ako je pas bolestan.]",
+    "age_restrictions": "[POPUNI ili ostavi prazno - npr. Ne radimo sa psima mladjim od 8 nedelja.]",
+    "aggressive_dog_policy": "[POPUNI - npr. Za pse sa istorijom agresije obavezna je prethodna telefonska konsultacija.]",
+    "owner_presence": "[POPUNI - npr. Vlasnik mora biti prisutan na svakom treningu. Trening se radi sa vlasnikom, ne umesto vlasnika.]",
+    "payment_policy": "[POPUNI - npr. Placanje je u gotovini ili na racun. Avansno placanje paketa moze biti uz popust.]",
+    "results_disclaimer": "[POPUNI - npr. Rezultati treninga zavise od doslednosti vlasnika izmedju casova. Ne garantujemo rezultate bez aktivnog ucesca vlasnika.]",
+    "veterinary_disclaimer": "Za sve zdravstvene probleme, simptome bolesti ili fizicke promene kod vašeg psa, obavezno se obratite veterinaru. Naša oblast rada je iskljucivo obuka i ponasanje pasa."
+  },
+
+  "bot_behavior": {
+    "default_language_note": "Bot odgovara na jeziku na kome korisnik pise. Nema podrazumevanog jezika.",
+    "tone": "Prirodan, topao, motivacion, strucan i profesionalan.",
+    "no_hallucination_rule": "Nikada ne izmisljaj informacije. Ako odgovor nije u bazi znanja, jasno reci: 'Tu informaciju trenutno nemam u bazi znanja.' Zatim predlozi korisniku da kontaktira tim.",
+    "fallback_contact_message": "[POPUNI - npr. Za tacne informacije mozete nas kontaktirati na telefon [BROJ] ili email [EMAIL]. Odgovaramo u roku od 24 sata.]",
+    "greeting_message": "[POPUNI - npr. Zdravo! Ja sam Dog Trainer Assistant. Tu sam da vam pomognem sa pitanjima o dresuri i obuci pasa, nasim uslugama i savezima za vas i vaseg ljubimca. Kako mogu da pomognem?]",
+    "quick_suggestions": [
+      "[POPUNI - npr. Koje usluge nudite?]",
+      "[POPUNI - npr. Kako mogu da zakazem termin?]",
+      "[POPUNI - npr. Moje stence ne slusa - sta da radim?]",
+      "[POPUNI - npr. Sa koliko meseci da pocnem trening?]"
+    ]
+  }
+}
