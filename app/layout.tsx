@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dog Trainer Assistant",
-  description: "AI asistent za dresuru pasa",
+  title: "ZOOlogisch Assistant",
+  description: "AI asistent za obuku pasa - ZOOlogisch",
 };
 
 export default function RootLayout({

@@ -132,7 +132,7 @@ export default function ChatInput({ onSend, isLoading }: ChatInputProps) {
       </div>
 
       <p className="text-center text-sky-600/50 text-[10px] mt-1.5">
-        Dog Trainer Assistant · AI powered
+        ZOOlogisch Assistant · AI powered
       </p>
     </div>
   );

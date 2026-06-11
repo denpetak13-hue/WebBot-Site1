@@ -14,10 +14,10 @@ export default function Home() {
         <div className="glass-panel rounded-3xl p-10 max-w-lg">
           <div className="text-5xl mb-4">🐕</div>
           <h1 className="text-3xl font-bold text-sky-100 mb-3">
-            Dog Trainer Assistant
+            ZOOlogisch Assistant
           </h1>
           <p className="text-sky-300 text-base leading-relaxed mb-2">
-            Dobrodošli na demo stranicu AI asistenta za dresuru pasa.
+            Dobrodošli na demo stranicu AI asistenta za obuku pasa.
           </p>
           <p className="text-sky-400 text-sm">
             Kliknite na chat ikonicu u donjem desnom uglu da počnete razgovor.

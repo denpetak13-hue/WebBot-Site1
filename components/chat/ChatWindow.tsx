@@ -8,13 +8,15 @@ import TypingIndicator from "./TypingIndicator";
 import QuickSuggestions from "./QuickSuggestions";
 
 const GREETING =
-  "Zdravo! Ja sam Dog Trainer Assistant 🐕 Tu sam da vam pomognem sa pitanjima o dresuri i obuci pasa, nasim uslugama i savetima za vas i vaseg ljubimca. Kako mogu da pomognem?";
+  "Zdravo! Ja sam ZOOlogisch asistent 🐕 Tu sam da vam pomognem oko obuke pasa, ponasanja, zakazivanja, radnog vremena i lokacije, kao i oko nase ponude hrane i opreme za pse i macke. Kako mogu da pomognem?";
 
 const QUICK_SUGGESTIONS = [
-  "Koje usluge nudite?",
-  "Stene ne slusa - sta da radim?",
-  "Sa koliko meseci poceti trening?",
-  "Kako zakazati termin?",
+  "Koje usluge obuke pasa nudite?",
+  "Kako mogu da zakazem trening?",
+  "Gde se nalazi ZOOlogisch i koje je radno vreme?",
+  "Da li imate prodavnicu hrane i opreme?",
+  "Moj pas vuce povodac, sta preporucujete?",
+  "Da li radite sa agresivnim ili plasljivim psima?",
 ];
 
 function generateId(): string {
@@ -149,7 +151,7 @@ export default function ChatWindow({ onClose }: ChatWindowProps) {
           </div>
           <div>
             <p className="text-sky-100 font-semibold text-sm leading-tight">
-              Dog Trainer Assistant
+              ZOOlogisch Assistant
             </p>
             <div className="flex items-center gap-1.5 mt-0.5">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />

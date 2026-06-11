@@ -1,249 +1,259 @@
 {
   "_instructions": {
-    "description": "Dog Trainer Assistant - Baza znanja za MVP",
-    "usage": "Popuni sva polja oznacena sa [POPUNI]. Polja koja nisu relevantna za firmu ostavi prazna ili ukloni.",
-    "format": "UTF-8, JSON format. Bot ce koristiti ove podatke kao jedini izvor istine o firmi.",
-    "languages": "Sav sadrzaj unosi na srpskom. Bot ce sam prevoditi odgovore na jezik korisnika."
+    "description": "Dog Trainer Assistant - Baza znanja za ZOOlogisch",
+    "usage": "Sadrzaj se odrzava rucno. Bot koristi ove podatke kao jedini izvor istine o firmi.",
+    "format": "UTF-8, JSON format.",
+    "languages": "Sadrzaj je na srpskom. Bot sam prevodi odgovore na jezik korisnika."
   },
 
   "about": {
-    "school_name": "[POPUNI - Naziv firme/skole dresure pasa]",
-    "tagline": "[POPUNI - Kratki slogan, npr: 'Profesionalna dresura pasa sa ljubavlju i strucnoscu']",
-    "description": "[POPUNI - Opis firme u 3-5 recenica: ko ste, cime se bavite, koliko imate iskustva, sta vas izdvaja od konkurencije]",
-    "founded_year": "[POPUNI - npr. 2015]",
+    "school_name": "ZOOlogisch",
+    "tagline": "Skola obuke pasa i specijalizovana prodavnica za pse i macke u Becu.",
+    "description": "ZOOlogisch je specijalizovano zoofach preduzece u Becu (Linzer Strasse 400, 1140 Wien) koje vodi Joso Suknovic. Pored profesionalne skole obuke pasa (Hundeschule), ZOOlogisch je i prodavnica kvalitetne hrane i opreme za pse i macke, sa naglaskom na strucno savetovanje. Glavni fokus je obuka pasa i harmonican odnos izmedju psa i vlasnika, a prodavnica je dodatni deo ponude.",
+    "founded_year": "Zoofach radnju vlasnik vodi vec oko 20 godina.",
     "trainers": [
       {
-        "name": "[POPUNI - Ime i prezime trenera]",
-        "title": "[POPUNI - npr. Sertifikovani trener pasa, Majstor dresure]",
-        "experience_years": "[POPUNI - broj godina iskustva]",
-        "specializations": "[POPUNI - npr. Korekcija ponasanja, Trening mladih pasa, Agility]",
-        "bio": "[POPUNI - Kratka biografija trenera]"
+        "name": "Joso Suknovic",
+        "title": "Vlasnik i sertifikovani pas psiholog (Hundepsychologe)",
+        "experience_years": "Oko 20 godina rada sa kucnim ljubimcima; ranije i asistent kod veterinara.",
+        "specializations": "Obuka pasa, savetovanje o ponasanju, terapija ponasanja, savetovanje pre kupovine steneta, savetovanje o ishrani.",
+        "bio": "Joso Suknovic ima dugogodisnju vezu sa zivotinjama i iskustvo kao asistent kod veterinara. Pre oko 20 godina preuzeo je zoofach radnju u Linzer Strasse u Becu. Od 2012. do 2014. studirao je hundepsihologiju na Akademiji za prirodnu medicinu zivotinja (ATN) u Cirihu i diplomirao 2014. Od tada vodi i skolu obuke pasa, gde pomaze vlasnicima da bolje razumeju svoje pse."
       }
     ],
-    "certifications": "[POPUNI - Da li imate sertifikate, licence, clanstvo u udruzenjima? npr. Sertifikat XYZ akademije, Clan Saveza kinologa Srbije]",
-    "philosophy": "[POPUNI - Filozofija rada, metode koje koristite, npr. Koristimo iskljucivo pozitivno potkrepljivanje bez prinude i fizicke kazne]"
+    "certifications": "Diploma iz hundepsihologije (ATN Zurich, 2012-2014, zavrseno 2014).",
+    "philosophy": "Kvalitet umesto kvantiteta. Rad na harmoniji izmedju psa i coveka i na savladavanju svakodnevnih situacija. Cilj je da pas slusa vlasnika ne samo na terenu za trening, vec i u svakodnevnom zivotu. Akcenat je na strucnom savetovanju i razumevanju psa."
   },
 
   "contact": {
-    "phone": "[POPUNI - Broj telefona, npr. +381 60 123 4567]",
-    "email": "[POPUNI - Email adresa, npr. info@dogtrainer.rs]",
-    "website": "[POPUNI - URL sajta, npr. www.dogtrainer.rs]",
-    "instagram": "[POPUNI ili ostavi prazno - npr. @dogtrainer_rs]",
-    "facebook": "[POPUNI ili ostavi prazno - npr. facebook.com/dogtrainer.rs]",
+    "phone": "01 911 35 68",
+    "email": "office@zoologisch.at",
+    "website": "https://zoologisch.at/",
+    "instagram": "",
+    "facebook": "",
     "address": {
-      "city": "[POPUNI - Grad, npr. Beograd]",
-      "municipality": "[POPUNI ili ostavi prazno - npr. Novi Beograd]",
-      "address_line": "[POPUNI ili ostavi prazno - ulica i broj ako je javna lokacija]",
-      "area_coverage": "[POPUNI - Koje oblasti pokrivate, npr. Ceo Beograd, Novi Sad, online za ostatak Srbije]"
+      "city": "Wien (Bec)",
+      "municipality": "1140 Wien",
+      "address_line": "Linzer Strasse 400",
+      "area_coverage": "Bec i okolina. Po potrebi su moguci i kucni dolasci (Hausbesuche) i van granica Beca."
     },
     "working_hours": {
-      "weekdays": "[POPUNI - npr. Ponedeljak - Petak: 09:00 - 20:00]",
-      "saturday": "[POPUNI - npr. Subota: 09:00 - 16:00]",
-      "sunday": "[POPUNI - npr. Nedeljom ne radimo ili Nedeljom samo po dogovoru]",
-      "note": "[POPUNI ili ostavi prazno - npr. Termini se zakazuju iskljucivo telefonom ili emailom]"
+      "weekdays": "Ponedeljak - Petak: 9:00 - 13:00 i 15:00 - 19:00",
+      "saturday": "Subota: 9:00 - 13:00",
+      "sunday": "Nedeljom ne radimo.",
+      "note": "Za termine obuke pasa najbolje je kontaktirati nas telefonom ili emailom."
     }
   },
 
   "services": [
     {
       "id": "service_01",
-      "name": "[POPUNI - naziv usluge, npr. Trening Stenaca]",
-      "short_description": "[POPUNI - 1-2 recenice sta ukljucuje]",
-      "full_description": "[POPUNI - detaljniji opis usluge, metode, sta pas uci, sta vlasnik dobija]",
-      "suitable_for": "[POPUNI - Za koga je namenjena, npr. Stenci od 2 do 6 meseci]",
-      "duration": "[POPUNI - Trajanje jednog casa, npr. 45-60 minuta]",
-      "number_of_sessions": "[POPUNI ili ostavi prazno - npr. Preporucujemo minimum 8 casova]",
-      "location_type": "[POPUNI - Individualno kod vas, grupno, online, na lokaciji skole]",
-      "price": "[POPUNI ili stavi null ako ne zelite da se prikazuju cene]",
-      "problems_solved": "[POPUNI - Koji problemi se resavaju ovom uslugom, npr. Socijalizacija, grrizanje, skakanje na ljude, osnove poslusnosti]"
+      "name": "Skola obuke pasa (Hundeschule)",
+      "short_description": "Profesionalna obuka pasa uz fokus na harmonican odnos psa i vlasnika.",
+      "full_description": "Skola obuke pasa koju vodi sertifikovani pas psiholog. Radi se na odnosu pas-covek i na savladavanju svakodnevnih situacija, tako da pas slusa vlasnika i u stvarnom zivotu, a ne samo na terenu za trening. Obuka je individualna i prilagodjena psu i vlasniku.",
+      "suitable_for": "Vlasnici pasa svih uzrasta koji zele bolji odnos i poslusnost.",
+      "duration": "Po dogovoru.",
+      "number_of_sessions": "",
+      "location_type": "Na lokaciji i po potrebi kucni dolasci.",
+      "price": null,
+      "problems_solved": "Osnovna poslusnost, ponasanje u svakodnevnim situacijama, odnos psa i vlasnika."
     },
     {
       "id": "service_02",
-      "name": "[POPUNI - npr. Osnovna Poslusnost]",
-      "short_description": "[POPUNI]",
-      "full_description": "[POPUNI]",
-      "suitable_for": "[POPUNI - npr. Psi svih rasa od 6 meseci pa naviše]",
-      "duration": "[POPUNI]",
-      "number_of_sessions": "[POPUNI]",
-      "location_type": "[POPUNI]",
-      "price": "[POPUNI ili null]",
-      "problems_solved": "[POPUNI]"
+      "name": "Grupni trening (Gruppentraining)",
+      "short_description": "Grupni treninzi: grupa za stenad (Welpengruppe) i grupa za odrasle pse.",
+      "full_description": "Grupni trening kroz grupu za stenad i grupu za odrasle pse. Nudi se obuka primerena psima koja omogucava skladan suzivot coveka i psa. Sve sto se nauci u skoli moze da se primeni u svakodnevnom zivotu.",
+      "suitable_for": "Stenad i odrasli psi, u zavisnosti od grupe.",
+      "duration": "Po dogovoru.",
+      "number_of_sessions": "",
+      "location_type": "Grupno, na lokaciji.",
+      "price": null,
+      "problems_solved": "Socijalizacija, poslusnost, ponasanje u prisustvu drugih pasa."
     },
     {
       "id": "service_03",
-      "name": "[POPUNI - npr. Korekcija Problematicnog Ponasanja]",
-      "short_description": "[POPUNI]",
-      "full_description": "[POPUNI]",
-      "suitable_for": "[POPUNI - npr. Psi sa agresijom, fobijama, anksioznoscu, destruktivnim ponasanjem]",
-      "duration": "[POPUNI]",
-      "number_of_sessions": "[POPUNI]",
-      "location_type": "[POPUNI]",
-      "price": "[POPUNI ili null]",
-      "problems_solved": "[POPUNI]"
+      "name": "Individualni trening (Einzeltraining)",
+      "short_description": "Individualni treninzi prilagodjeni konkretnom psu i vlasniku.",
+      "full_description": "Individualni rad fokusiran na konkretne potrebe psa i vlasnika. Pogodan kada je potreban prilagodjen pristup ili kada se rade specificni problemi u ponasanju.",
+      "suitable_for": "Psi kojima je potreban individualan pristup.",
+      "duration": "Po dogovoru.",
+      "number_of_sessions": "",
+      "location_type": "Individualno, na lokaciji ili kucni dolazak.",
+      "price": null,
+      "problems_solved": "Specificni problemi u ponasanju, prilagodjen tempo rada."
     },
     {
       "id": "service_04",
-      "name": "[POPUNI - npr. Individualni Treninzi]",
-      "short_description": "[POPUNI]",
-      "full_description": "[POPUNI]",
-      "suitable_for": "[POPUNI]",
-      "duration": "[POPUNI]",
-      "number_of_sessions": "[POPUNI]",
-      "location_type": "[POPUNI]",
-      "price": "[POPUNI ili null]",
-      "problems_solved": "[POPUNI]"
+      "name": "Savetovanje i terapija ponasanja (Verhaltensberatung i Verhaltenstherapie)",
+      "short_description": "Pomoc kod problematicnog ponasanja, agresije, straha i resocijalizacije.",
+      "full_description": "Savetovanje i terapija ponasanja za pse sa poteskocama. Radi se na agresivnom ponasanju prema ljudima ili drugim psima, resocijalizaciji, strahovima i nesigurnosti u razlicitim svakodnevnim situacijama. Pristup je individualan, jer se prvo utvrdjuje uzrok problema.",
+      "suitable_for": "Psi sa agresijom, strahom, anksioznoscu ili drugim problemima u ponasanju.",
+      "duration": "Po dogovoru.",
+      "number_of_sessions": "",
+      "location_type": "Individualno, na lokaciji ili kucni dolazak.",
+      "price": null,
+      "problems_solved": "Agresija prema ljudima ili psima, strah, anksioznost, resocijalizacija."
     },
     {
       "id": "service_05",
-      "name": "[POPUNI - npr. Grupni Treninzi]",
-      "short_description": "[POPUNI]",
-      "full_description": "[POPUNI]",
-      "suitable_for": "[POPUNI]",
-      "duration": "[POPUNI]",
-      "number_of_sessions": "[POPUNI]",
-      "location_type": "[POPUNI]",
-      "price": "[POPUNI ili null]",
-      "problems_solved": "[POPUNI]"
+      "name": "Savetovanje pre kupovine steneta (Welpenberatung)",
+      "short_description": "Savet o izboru rase koja odgovara vasim zivotnim uslovima pre nabavke psa.",
+      "full_description": "Savetovanje buducih vlasnika pasa o tome koja rasa i koje rasno tipicno ponasanje najbolje odgovara njihovim zivotnim uslovima. Mnoge radne rase su samo uslovno ili nikako pogodne kao porodicni psi. Pravim savetom pre kupovine steneta sprecavaju se problemi koji nastaju zbog pogresnog izbora rase.",
+      "suitable_for": "Osobe koje planiraju da nabave psa.",
+      "duration": "Po dogovoru.",
+      "number_of_sessions": "",
+      "location_type": "Na lokaciji.",
+      "price": null,
+      "problems_solved": "Izbor odgovarajuce rase, prevencija problema zbog pogresnog izbora."
     },
     {
       "id": "service_06",
-      "name": "[POPUNI ili ukloni - npr. Socijalizacija Pasa]",
-      "short_description": "[POPUNI]",
-      "full_description": "[POPUNI]",
-      "suitable_for": "[POPUNI]",
-      "duration": "[POPUNI]",
-      "number_of_sessions": "[POPUNI]",
-      "location_type": "[POPUNI]",
-      "price": "[POPUNI ili null]",
-      "problems_solved": "[POPUNI]"
+      "name": "Priprema za ispit za psa (Hundefuehrschein) i podrska u vaspitanju",
+      "short_description": "Priprema za Hundefuehrschein i pomoc oko vaspitanja, npr. cistoce u kuci.",
+      "full_description": "Priprema psa i vlasnika za Hundefuehrschein, kao i podrska kod pitanja vaspitanja poput ucenja cistoce u kuci (Stubenreinheit). Za pse iz azila moguca je pomoc i pratnja u pronalazenju odgovarajuceg psa.",
+      "suitable_for": "Vlasnici koji se pripremaju za ispit ili rade na osnovama vaspitanja.",
+      "duration": "Po dogovoru.",
+      "number_of_sessions": "",
+      "location_type": "Na lokaciji ili kucni dolazak.",
+      "price": null,
+      "problems_solved": "Priprema za Hundefuehrschein, cistoca u kuci, izbor psa iz azila."
     },
     {
       "id": "service_07",
-      "name": "[POPUNI ili ukloni - npr. Online Konsultacije]",
-      "short_description": "[POPUNI]",
-      "full_description": "[POPUNI]",
-      "suitable_for": "[POPUNI - npr. Vlasnici koji nisu u mogucnosti da dolaze licno]",
-      "duration": "[POPUNI]",
-      "number_of_sessions": "[POPUNI]",
-      "location_type": "Online (video poziv)",
-      "price": "[POPUNI ili null]",
-      "problems_solved": "[POPUNI]"
+      "name": "Savetovanje o ishrani (Ernaehrungsberatung)",
+      "short_description": "Strucno savetovanje o ishrani prilagodjenoj vasem ljubimcu.",
+      "full_description": "Savetovanje o ishrani prilagodjenoj konkretnom psu ili macki. Deo je strucne podrske koju ZOOlogisch nudi pored obuke i prodaje hrane i opreme.",
+      "suitable_for": "Vlasnici pasa i macaka.",
+      "duration": "Po dogovoru.",
+      "number_of_sessions": "",
+      "location_type": "Na lokaciji (u radnji).",
+      "price": null,
+      "problems_solved": "Izbor odgovarajuce ishrane, prilagodjavanje ishrane potrebama ljubimca."
+    },
+    {
+      "id": "service_08",
+      "name": "Prodavnica hrane i opreme (Pet shop)",
+      "short_description": "Specijalizovana prodavnica hrane i opreme za pse i macke, uz strucno savetovanje.",
+      "full_description": "ZOOlogisch je specijalizovano zoofach preduzece sa kvalitetnom hranom i opremom za pse i macke. Pored prodaje, poseban naglasak je na licnom i strucnom savetovanju. U ponudi su poznati i kvalitetni brendovi hrane i opreme. Prodavnica je dodatni deo ponude uz skolu obuke pasa.",
+      "suitable_for": "Vlasnici pasa i macaka.",
+      "duration": "",
+      "number_of_sessions": "",
+      "location_type": "Radnja na adresi Linzer Strasse 400, 1140 Wien.",
+      "price": null,
+      "problems_solved": "Hrana, oprema i pribor za pse i macke, uz strucan savet."
     }
   ],
 
   "pricing": {
     "show_prices": false,
-    "note": "Ako zelite da bot prikazuje cene, postavi show_prices na true i popuni prices listu. Ako ne zelite da bot govori o cenama, ostavi show_prices na false.",
+    "note": "Cene nisu navedene u bazi. Bot ne sme da izmislja cene, vec upucuje korisnika na kontakt.",
     "prices": [],
-    "pricing_note": "[POPUNI ili ostavi prazno - npr. Cene zavise od broja casova i vrste treninga. Za tacnu cenu kontaktirajte nas.]"
+    "pricing_note": "Za tacne cene obuke i usluga najbolje je kontaktirati nas telefonom na 01 911 35 68 ili emailom na office@zoologisch.at."
   },
 
   "faq": [
     {
-      "question": "Sa koliko meseci mogu da pocnem trening svog stenceta?",
-      "answer": "[POPUNI - npr. Trening mozete poceti vec sa 2 meseca starosti. Sto ranije pocnete sa socijalizacijom i osnovnim navikama, to bolje. Mladi psi izuzetno brzo uce.]"
+      "question": "Koje usluge obuke pasa nudite?",
+      "answer": "Nudimo skolu obuke pasa (Hundeschule), grupni trening (grupa za stenad i grupa za odrasle pse), individualni trening, savetovanje i terapiju ponasanja, savetovanje pre kupovine steneta, pripremu za Hundefuehrschein i savetovanje o ishrani. Pored toga, ZOOlogisch je i prodavnica hrane i opreme za pse i macke."
     },
     {
-      "question": "Koliko casova je potrebno da bi pas naucio osnove?",
-      "answer": "[POPUNI - npr. Broj casova zavisi od psa, rase, starosti i problema koji se resava. Vecina pasa pokaze napredak vec posle 3-4 casa, ali za trajne rezultate preporucujemo minimum 8-10 casova.]"
+      "question": "Kako mogu da zakazem trening?",
+      "answer": "Termin za obuku najlakse je dogovoriti telefonom na 01 911 35 68 ili emailom na office@zoologisch.at. Mozete nas posetiti i u radnji na adresi Linzer Strasse 400, 1140 Wien u toku radnog vremena."
     },
     {
-      "question": "Da li koristite fizicku kaznu u treningu?",
-      "answer": "[POPUNI - npr. Ne. Radimo iskljucivo metodama pozitivnog potkrepljivanja. Nagrada i motivacija su kljuc uspesnog treninga.]"
+      "question": "Gde se nalazite?",
+      "answer": "Nalazimo se na adresi Linzer Strasse 400, 1140 Wien (Bec). Po potrebi su moguci i kucni dolasci, ponekad i van granica Beca."
     },
     {
-      "question": "Da li mozete da dodjete kod mene kuci?",
-      "answer": "[POPUNI - npr. Da, vecina nasih treninga se odvija kod klijenta, jer je za psa najvazniji napredak u svom okruzenju.]"
+      "question": "Koje je radno vreme?",
+      "answer": "Radno vreme je: ponedeljak - petak od 9:00 do 13:00 i od 15:00 do 19:00, subota od 9:00 do 13:00. Nedeljom ne radimo."
     },
     {
-      "question": "Da li je moguc trening za agresivnog psa?",
-      "answer": "[POPUNI - npr. Da, ali agresija je slozen problem koji zahteva individualnu procenu. Prvim razgovorom utvrdimo uzrok i napravimo plan. Ne garantujemo rezultate bez prethodne procene.]"
+      "question": "Da li imate prodavnicu hrane i opreme?",
+      "answer": "Da. ZOOlogisch je i specijalizovana prodavnica kvalitetne hrane i opreme za pse i macke, sa naglaskom na strucno savetovanje. Prodavnica je dodatni deo ponude uz skolu obuke pasa."
     },
     {
-      "question": "Kako zakazujem termin?",
-      "answer": "[POPUNI - npr. Termin mozete zakazati pozivom ili porukom na broj XXXXX, ili emailom na XXXXX. Javimo se u roku od 24 sata.]"
+      "question": "Da li radite sa agresivnim ili plasljivim psima?",
+      "answer": "Da, kroz savetovanje i terapiju ponasanja radimo na agresiji prema ljudima ili drugim psima, na strahovima i nesigurnosti, kao i na resocijalizaciji. Pristup je individualan jer prvo utvrdjujemo uzrok problema. Za ovakve slucajeve najbolje je da nas kontaktirate da dogovorimo procenu."
     },
     {
-      "question": "Da li radite sa svim rasama?",
-      "answer": "[POPUNI - npr. Da, radimo sa psima svih rasa i velicina.]"
+      "question": "Da li nudite savetovanje pre kupovine steneta?",
+      "answer": "Da. Kroz Welpenberatung savetujemo buduce vlasnike koja rasa i koje rasno tipicno ponasanje najbolje odgovaraju njihovim zivotnim uslovima, kako bi se izbegli problemi zbog pogresnog izbora rase."
     },
     {
-      "question": "Sta da donesem na prvi cas?",
-      "answer": "[POPUNI - npr. Dovedite psa na povodcu, ponesite poslastice koje vas pas voli i bubraznik ako koristite. Ne zaboravite da pas bude nahranjen, ali ne pretrpan pre treninga.]"
+      "question": "Da li su moguci kucni dolasci?",
+      "answer": "Da, po potrebi su moguci individualni casovi i kucni dolasci (Hausbesuche), ponekad i van granica Beca, kako bismo bolje upoznali uslove u kojima pas zivi."
     },
     {
-      "question": "[POPUNI - Dodajte sopstveno pitanje]",
-      "answer": "[POPUNI - Dodajte odgovor]"
-    },
-    {
-      "question": "[POPUNI - Dodajte sopstveno pitanje]",
-      "answer": "[POPUNI - Dodajte odgovor]"
+      "question": "Ko vodi obuku?",
+      "answer": "Obuku vodi Joso Suknovic, vlasnik i sertifikovani pas psiholog. Studirao je hundepsihologiju na ATN akademiji u Cirihu (2012-2014) i ima dugogodisnje iskustvo u radu sa zivotinjama."
     }
   ],
 
   "behavior_recommendations": {
-    "description": "Mapa problema korisnika na preporucene usluge. Bot ce koristiti ovo da preporuci pravu uslugu.",
+    "description": "Mapa problema korisnika na preporucene usluge. Bot koristi ovo da preporuci pravu uslugu.",
     "mappings": [
       {
         "problem_keywords": ["stene", "stenci", "stence", "malo stence", "mali pas", "puppy", "stenac"],
-        "recommended_service_ids": ["service_01"],
-        "bot_note": "[POPUNI - npr. Za stence preporucujemo sto raniji pocetak treninga zbog kriticnog perioda socijalizacije koji traje do 4 meseca starosti.]"
+        "recommended_service_ids": ["service_02", "service_05"],
+        "bot_note": "Za stenad preporucujemo grupu za stenad (Welpengruppe) i, ako tek planirate psa, savetovanje pre kupovine steneta. Rani pocetak je vazan zbog socijalizacije."
       },
       {
         "problem_keywords": ["ne slusa", "ignorise", "bezi", "ne reaguje na ime", "poslusnost"],
-        "recommended_service_ids": ["service_02", "service_04"],
-        "bot_note": "[POPUNI - npr. Osnovna poslusnost je temelj svakog uspesnog odnosa sa psom. Preporucujemo da pocnemo sa evaluacijom i napravimo plan.]"
+        "recommended_service_ids": ["service_01", "service_03"],
+        "bot_note": "Za poslusnost preporucujemo skolu obuke pasa ili individualni trening, gde se radi na odnosu psa i vlasnika i u svakodnevnim situacijama."
       },
       {
-        "problem_keywords": ["vuce", "vuce povodac", "lajanjem", "skace na ljude", "skakanje"],
-        "recommended_service_ids": ["service_02", "service_04"],
-        "bot_note": "[POPUNI - npr. Ovo je jedan od najcescih problema i resiv je kroz dosledan rad i pravu tehniku.]"
+        "problem_keywords": ["vuce", "vuce povodac", "povodac", "skace na ljude", "skakanje"],
+        "recommended_service_ids": ["service_01", "service_03"],
+        "bot_note": "Povlacenje na povocu i slicni problemi se uspesno resavaju kroz obuku; preporucujemo skolu obuke ili individualni trening."
       },
       {
         "problem_keywords": ["agresija", "agresivan", "grize", "grize ljude", "grize pse", "laje na pse", "napada"],
-        "recommended_service_ids": ["service_03", "service_04"],
-        "bot_note": "[POPUNI - npr. Agresivno ponasanje zahteva individualnu procenu pre nego sto napravimo plan treninga. Bitan nam je uzrok agresije.]"
+        "recommended_service_ids": ["service_04", "service_03"],
+        "bot_note": "Agresivno ponasanje zahteva savetovanje i terapiju ponasanja uz individualnu procenu uzroka pre pravljenja plana."
       },
       {
-        "problem_keywords": ["strah", "plasljiv", "anksioznost", "stress", "tresa se", "ne izlazi"],
-        "recommended_service_ids": ["service_03", "service_06"],
-        "bot_note": "[POPUNI - npr. Strah i anksioznost se resavaju postepenom desenzitizacijom i poverenjem. Nije nesto sto treba gurati na silu.]"
+        "problem_keywords": ["strah", "plasljiv", "anksioznost", "stres", "trese se", "ne izlazi", "nesiguran"],
+        "recommended_service_ids": ["service_04", "service_03"],
+        "bot_note": "Strah i nesigurnost se resavaju strpljivo kroz savetovanje i terapiju ponasanja, po potrebi individualnim radom."
       },
       {
-        "problem_keywords": ["socijalizacija", "ne voli pse", "ne voli ljude", "ne navikava", "izolovan"],
-        "recommended_service_ids": ["service_06", "service_05"],
-        "bot_note": "[POPUNI - npr. Socijalizacija je kljucna, narocito do godinu dana. Grupni treninzi su odlican nacin za bezbedan kontakt sa drugim psima.]"
+        "problem_keywords": ["dozvola", "ispit", "hundefuehrschein", "polaganje", "cistoca", "stubenrein"],
+        "recommended_service_ids": ["service_06"],
+        "bot_note": "Za pripremu za Hundefuehrschein i osnove vaspitanja, poput ucenja cistoce u kuci, preporucujemo odgovarajucu pripremu i podrsku."
       },
       {
-        "problem_keywords": ["online", "daleko", "ne mogu da dodjem", "video", "konsultacija"],
-        "recommended_service_ids": ["service_07"],
-        "bot_note": "[POPUNI - npr. Za klijente koji nisu u mogucnosti da dodjuju licno, nudimo online konsultacije putem video poziva.]"
+        "problem_keywords": ["hrana", "ishrana", "oprema", "povodac kupovina", "shop", "prodavnica", "futter", "macka", "macke"],
+        "recommended_service_ids": ["service_08", "service_07"],
+        "bot_note": "Za hranu i opremu uputi korisnika na nasu prodavnicu, a za izbor ishrane na savetovanje o ishrani."
       }
     ]
   },
 
   "policies": {
-    "cancellation_policy": "[POPUNI - npr. Otkazivanje termina molimo najkasnije 24 sata unapred. Kasno otkazivanje ili nedolazak moze biti naplacen.]",
-    "health_requirements": "[POPUNI - npr. Pas mora biti vakcinisan i redovno odglisavljen. Na cas ne dolazite ako je pas bolestan.]",
-    "age_restrictions": "[POPUNI ili ostavi prazno - npr. Ne radimo sa psima mladjim od 8 nedelja.]",
-    "aggressive_dog_policy": "[POPUNI - npr. Za pse sa istorijom agresije obavezna je prethodna telefonska konsultacija.]",
-    "owner_presence": "[POPUNI - npr. Vlasnik mora biti prisutan na svakom treningu. Trening se radi sa vlasnikom, ne umesto vlasnika.]",
-    "payment_policy": "[POPUNI - npr. Placanje je u gotovini ili na racun. Avansno placanje paketa moze biti uz popust.]",
-    "results_disclaimer": "[POPUNI - npr. Rezultati treninga zavise od doslednosti vlasnika izmedju casova. Ne garantujemo rezultate bez aktivnog ucesca vlasnika.]",
-    "veterinary_disclaimer": "Za sve zdravstvene probleme, simptome bolesti ili fizicke promene kod vašeg psa, obavezno se obratite veterinaru. Naša oblast rada je iskljucivo obuka i ponasanje pasa."
+    "cancellation_policy": "Za otkazivanje ili promenu termina molimo da nas kontaktirate telefonom ili emailom sto ranije.",
+    "health_requirements": "",
+    "age_restrictions": "",
+    "aggressive_dog_policy": "Za pse sa izrazenom agresijom ili ozbiljnim problemima u ponasanju preporucujemo da nas prvo kontaktirate kako bismo dogovorili procenu.",
+    "owner_presence": "Obuka se radi zajedno sa vlasnikom, jer je cilj da vlasnik nauci kako da razume i vodi svog psa.",
+    "payment_policy": "",
+    "results_disclaimer": "Rezultati obuke zavise i od doslednosti vlasnika izmedju casova. Ne garantujemo rezultate bez aktivnog ucesca vlasnika.",
+    "veterinary_disclaimer": "Za sve zdravstvene probleme, simptome bolesti ili fizicke promene kod vaseg psa, obavezno se obratite veterinaru. Nasa oblast rada je obuka i ponasanje pasa."
   },
 
   "bot_behavior": {
     "default_language_note": "Bot odgovara na jeziku na kome korisnik pise. Nema podrazumevanog jezika.",
     "tone": "Prirodan, topao, motivacion, strucan i profesionalan.",
-    "no_hallucination_rule": "Nikada ne izmisljaj informacije. Ako odgovor nije u bazi znanja, jasno reci: 'Tu informaciju trenutno nemam u bazi znanja.' Zatim predlozi korisniku da kontaktira tim.",
-    "fallback_contact_message": "[POPUNI - npr. Za tacne informacije mozete nas kontaktirati na telefon [BROJ] ili email [EMAIL]. Odgovaramo u roku od 24 sata.]",
-    "greeting_message": "[POPUNI - npr. Zdravo! Ja sam Dog Trainer Assistant. Tu sam da vam pomognem sa pitanjima o dresuri i obuci pasa, nasim uslugama i savezima za vas i vaseg ljubimca. Kako mogu da pomognem?]",
+    "no_hallucination_rule": "Nikada ne izmisljaj informacije. Ako odgovor nije u bazi znanja, jasno reci da tu informaciju trenutno nemas u bazi i predlozi korisniku da kontaktira tim. Posebno nikada ne izmisljaj cene, tacne termine, trajanje ili detalje koji nisu navedeni.",
+    "fallback_contact_message": "Za tacne informacije kontaktirajte nas telefonom na 01 911 35 68 ili emailom na office@zoologisch.at.",
+    "greeting_message": "Zdravo! Ja sam ZOOlogisch asistent. Tu sam da vam pomognem oko obuke pasa, ponasanja, zakazivanja, radnog vremena i lokacije, kao i oko nase ponude hrane i opreme za pse i macke. Kako mogu da pomognem?",
     "quick_suggestions": [
-      "[POPUNI - npr. Koje usluge nudite?]",
-      "[POPUNI - npr. Kako mogu da zakazem termin?]",
-      "[POPUNI - npr. Moje stence ne slusa - sta da radim?]",
-      "[POPUNI - npr. Sa koliko meseci da pocnem trening?]"
+      "Koje usluge obuke pasa nudite?",
+      "Kako mogu da zakazem trening?",
+      "Gde se nalazi ZOOlogisch i koje je radno vreme?",
+      "Da li imate prodavnicu hrane i opreme?",
+      "Moj pas vuce povodac, sta preporucujete?",
+      "Da li radite sa agresivnim ili plasljivim psima?"
     ]
   }
 }
