@@ -186,6 +186,55 @@
     {
       "question": "Ko vodi obuku?",
       "answer": "Obuku vodi Joso Suknovic, vlasnik i sertifikovani pas psiholog. Studirao je hundepsihologiju na ATN akademiji u Cirihu (2012-2014) i ima dugogodisnje iskustvo u radu sa zivotinjama."
+    },
+
+    {
+      "question": "Wie sind die Öffnungszeiten? / Wie sind die Offnungszeiten? / Wann haben Sie geöffnet?",
+      "answer": "Radno vreme: ponedeljak - petak od 9:00 do 13:00 i od 15:00 do 19:00, subota od 9:00 do 13:00. Nedeljom ne radimo."
+    },
+    {
+      "question": "Wo sind Sie? / Wo befinden Sie sich? / Wie ist die Adresse?",
+      "answer": "Adresa je Linzer Strasse 400, 1140 Wien (Bec). Po potrebi su moguci i kucni dolasci."
+    },
+    {
+      "question": "Welche Dienstleistungen bieten Sie an? / Was bieten Sie an? / Welche Kurse gibt es?",
+      "answer": "Nudimo Hundeschule, Gruppentraining (Welpengruppe i grupa za odrasle), Einzeltraining, Verhaltensberatung/Verhaltenstherapie, Welpenberatung, pripremu za Hundefuehrschein i Ernaehrungsberatung. Pored toga, ZOOlogisch je i prodavnica hrane i opreme za pse i macke."
+    },
+    {
+      "question": "Haben Sie einen Pet Shop? / Verkaufen Sie Tierbedarf? / Gibt es Tierfutter?",
+      "answer": "Da. ZOOlogisch je specijalizovana prodavnica kvalitetne hrane i opreme za pse i macke, uz strucno savetovanje. Prodavnica je dodatni deo ponude uz skolu obuke pasa."
+    },
+    {
+      "question": "Wie kann ich einen Termin vereinbaren? / Wie buche ich einen Kurs?",
+      "answer": "Termin najlakse dogovoriti telefonom na 01 911 35 68 ili emailom na office@zoologisch.at."
+    },
+    {
+      "question": "Was kostet das Training? / Wie viel kostet ein Kurs? / Preise?",
+      "answer": "Cene nisu navedene u bazi. Za tacne cene kontaktirajte nas telefonom na 01 911 35 68 ili emailom na office@zoologisch.at."
+    },
+    {
+      "question": "What are your opening hours? / When are you open?",
+      "answer": "Radno vreme: ponedeljak - petak od 9:00 do 13:00 i od 15:00 do 19:00, subota od 9:00 do 13:00. Nedeljom ne radimo."
+    },
+    {
+      "question": "Where are you located? / What is your address?",
+      "answer": "Adresa je Linzer Strasse 400, 1140 Wien (Bec). Po potrebi su moguci i kucni dolasci."
+    },
+    {
+      "question": "What services do you offer? / What training do you provide?",
+      "answer": "Nudimo dog training school, group training (puppy group i adult dog group), individual training, behavior consulting/therapy, puppy advice before purchase, Hundefuehrschein preparation and nutrition consulting. Also a pet shop for dog and cat food and accessories."
+    },
+    {
+      "question": "Do you have a pet shop? / Do you sell dog food?",
+      "answer": "Da. ZOOlogisch je specijalizovana prodavnica kvalitetne hrane i opreme za pse i macke, uz strucno savetovanje."
+    },
+    {
+      "question": "How can I book a training session? / How do I make an appointment?",
+      "answer": "Termin najlakse dogovoriti telefonom na 01 911 35 68 ili emailom na office@zoologisch.at."
+    },
+    {
+      "question": "How much does training cost? / What are your prices?",
+      "answer": "Cene nisu navedene u bazi. Za tacne cene kontaktirajte nas telefonom na 01 911 35 68 ili emailom na office@zoologisch.at."
     }
   ],
 
