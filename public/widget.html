@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dog Trainer Assistant – Widget Test</title>
+  <style>
+    /* ── Reset ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f172a 0%, #0c4a6e 40%, #0e7490 70%, #164e63 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Demo page card ── */
+    .demo-card {
+      background: rgba(186,230,253,0.10);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(186,230,253,0.22);
+      border-radius: 24px;
+      padding: 40px 48px;
+      text-align: center;
+      max-width: 420px;
+    }
+    .demo-card .icon { font-size: 52px; margin-bottom: 16px; }
+    .demo-card h1 { color: #e0f2fe; font-size: 24px; font-weight: 700; margin-bottom: 10px; }
+    .demo-card p  { color: #7dd3fc; font-size: 14px; line-height: 1.6; }
+    .demo-card small { color: #38bdf8; font-size: 12px; opacity: .7; }
+
+    /* ── Widget container ── */
+    #dta-widget {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    /* ── Chat window ── */
+    #dta-window {
+      width: 360px;
+      height: 520px;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(160deg, rgba(12,74,110,.90) 0%, rgba(7,89,133,.93) 50%, rgba(3,105,161,.87) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(186,230,253,.18);
+      box-shadow: 0 25px 50px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.07);
+      transition: opacity .28s ease, transform .28s ease;
+      transform-origin: bottom right;
+    }
+    #dta-window.hidden {
+      opacity: 0;
+      transform: scale(.94) translateY(12px);
+      pointer-events: none;
+    }
+
+    /* ── Header ── */
+    .dta-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: rgba(7,89,133,.55);
+      border-bottom: 1px solid rgba(186,230,253,.13);
+      flex-shrink: 0;
+    }
+    .dta-header-left { display: flex; align-items: center; gap: 10px; }
+    .dta-avatar {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: linear-gradient(135deg,rgba(56,189,248,.30),rgba(14,165,233,.50));
+      border: 1px solid rgba(186,230,253,.28);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; flex-shrink: 0;
+    }
+    .dta-name { color: #e0f2fe; font-size: 14px; font-weight: 600; line-height: 1.2; }
+    .dta-status { display: flex; align-items: center; gap: 5px; margin-top: 2px; }
+    .dta-dot {
+      width: 6px; height: 6px; border-radius: 50%; background: #34d399;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.45} }
+    .dta-online { color: #67e8f9; font-size: 11px; }
+    .dta-close {
+      background: none; border: none; cursor: pointer;
+      color: #7dd3fc; width: 28px; height: 28px; border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .15s, color .15s;
+    }
+    .dta-close:hover { background: rgba(56,189,248,.18); color: #e0f2fe; }
+
+    /* ── Messages ── */
+    #dta-messages {
+      flex: 1; overflow-y: auto; padding: 12px;
+      display: flex; flex-direction: column; gap: 8px;
+      scroll-behavior: smooth;
+    }
+    #dta-messages::-webkit-scrollbar { width: 4px; }
+    #dta-messages::-webkit-scrollbar-track { background: rgba(186,230,253,.04); border-radius: 2px; }
+    #dta-messages::-webkit-scrollbar-thumb { background: rgba(56,189,248,.28); border-radius: 2px; }
+
+    .dta-row { display: flex; align-items: flex-end; gap: 6px; animation: fadeUp .2s ease; }
+    .dta-row.user { justify-content: flex-end; }
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(8px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    .dta-bubble-avatar {
+      width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg,rgba(56,189,248,.22),rgba(14,165,233,.38));
+      border: 1px solid rgba(186,230,253,.22);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; margin-bottom: 2px;
+    }
+    .dta-bubble {
+      max-width: 78%; padding: 9px 12px; border-radius: 16px;
+      font-size: 13px; line-height: 1.55;
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .dta-bubble.bot {
+      border-radius: 16px 16px 16px 4px;
+      background: rgba(186,230,253,.10);
+      border: 1px solid rgba(186,230,253,.20);
+      color: rgba(224,242,254,.95);
+    }
+    .dta-bubble.user {
+      border-radius: 16px 16px 4px 16px;
+      background: linear-gradient(135deg,rgba(3,105,161,.75),rgba(2,132,199,.85));
+      border: 1px solid rgba(56,189,248,.33);
+      color: rgba(240,249,255,.95);
+    }
+
+    /* ── Typing indicator ── */
+    .dta-typing .dta-bubble {
+      display: flex; align-items: center; gap: 4px; padding: 10px 14px;
+    }
+    .dta-typing-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: rgba(125,211,252,.75);
+    }
+    .dta-typing-dot:nth-child(1){animation:bounce 1.2s infinite 0s}
+    .dta-typing-dot:nth-child(2){animation:bounce 1.2s infinite .2s}
+    .dta-typing-dot:nth-child(3){animation:bounce 1.2s infinite .4s}
+    @keyframes bounce {
+      0%,60%,100%{transform:translateY(0);opacity:.55}
+      30%{transform:translateY(-5px);opacity:1}
+    }
+
+    /* ── Error ── */
+    .dta-error {
+      text-align: center; font-size: 12px; padding: 8px 12px; border-radius: 10px;
+      background: rgba(239,68,68,.13); border: 1px solid rgba(239,68,68,.28);
+      color: rgba(252,165,165,.9); margin: 4px auto; max-width: 90%;
+    }
+
+    /* ── Quick suggestions ── */
+    #dta-suggestions {
+      padding: 4px 12px 8px;
+      display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+    }
+    .dta-suggestion {
+      font-size: 11.5px; padding: 5px 11px; border-radius: 99px; cursor: pointer;
+      background: rgba(186,230,253,.08); border: 1px solid rgba(186,230,253,.20);
+      color: rgba(186,230,253,.85); transition: background .15s, border-color .15s, transform .1s;
+    }
+    .dta-suggestion:hover {
+      background: rgba(186,230,253,.16); border-color: rgba(186,230,253,.35); transform: scale(1.04);
+    }
+
+    /* ── Input area ── */
+    .dta-input-wrap {
+      flex-shrink: 0; padding: 10px 12px 12px;
+      border-top: 1px solid rgba(186,230,253,.11);
+      background: rgba(7,89,133,.28);
+    }
+    .dta-input-row {
+      display: flex; align-items: flex-end; gap: 8px;
+      background: rgba(186,230,253,.07); border: 1px solid rgba(186,230,253,.17);
+      border-radius: 12px; padding: 8px 10px;
+    }
+    #dta-input {
+      flex: 1; background: none; border: none; outline: none; resize: none;
+      font-family: inherit; font-size: 13px; color: #e0f2fe; line-height: 1.5;
+      min-height: 22px; max-height: 90px; overflow-y: auto;
+    }
+    #dta-input::placeholder { color: rgba(56,189,248,.45); }
+    #dta-send {
+      width: 32px; height: 32px; flex-shrink: 0; border-radius: 9px;
+      border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: transform .15s, opacity .15s;
+      background: linear-gradient(135deg,rgba(14,165,233,.80),rgba(2,132,199,.90));
+      border: 1px solid rgba(56,189,248,.38);
+      box-shadow: 0 2px 8px rgba(14,165,233,.28);
+    }
+    #dta-send:disabled { opacity: .28; cursor: default; transform: none !important; }
+    #dta-send:not(:disabled):hover  { transform: scale(1.08); }
+    #dta-send:not(:disabled):active { transform: scale(.93); }
+    .dta-footer { text-align: center; font-size: 10px; color: rgba(56,189,248,.38); margin-top: 6px; }
+
+    /* ── Toggle button ── */
+    #dta-toggle {
+      width: 56px; height: 56px; border-radius: 50%; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(135deg,rgba(14,165,233,.85),rgba(2,132,199,.92),rgba(3,105,161,.96));
+      border: 1px solid rgba(186,230,253,.38);
+      box-shadow: 0 8px 30px rgba(14,165,233,.38), 0 2px 8px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.13);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      transition: transform .2s;
+      position: relative;
+    }
+    #dta-toggle:hover  { transform: scale(1.10); }
+    #dta-toggle:active { transform: scale(.94); }
+    .dta-unread {
+      position: absolute; top: -3px; right: -3px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: #7dd3fc; border: 2px solid #0c4a6e;
+      animation: pulse 1.8s infinite;
+    }
+
+    /* ── Spin animation for loading ── */
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spin { animation: spin .7s linear infinite; }
+
+    /* ── Mobile ── */
+    @media (max-width: 400px) {
+      #dta-window { width: calc(100vw - 24px); height: 72vh; }
+      #dta-widget { bottom: 12px; right: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Demo background card -->
+  <div class="demo-card">
+    <div class="icon">🐕</div>
+    <h1>Dog Trainer Assistant</h1>
+    <p>Test stranica za chat widget.<br>Kliknite na ikonicu u donjem desnom uglu.</p>
+    <br>
+    <small id="api-url-display"></small>
+  </div>
+
+  <!-- Widget -->
+  <div id="dta-widget">
+    <div id="dta-window" class="hidden">
+      <div class="dta-header">
+        <div class="dta-header-left">
+          <div class="dta-avatar">🐕</div>
+          <div>
+            <div class="dta-name">Dog Trainer Assistant</div>
+            <div class="dta-status">
+              <span class="dta-dot"></span>
+              <span class="dta-online">Online</span>
+            </div>
+          </div>
+        </div>
+        <button class="dta-close" id="dta-close-btn" aria-label="Zatvori">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div id="dta-messages"></div>
+
+      <div id="dta-suggestions"></div>
+
+      <div class="dta-input-wrap">
+        <div class="dta-input-row">
+          <textarea id="dta-input" rows="1" placeholder="Postavite pitanje..." maxlength="2000"></textarea>
+          <button id="dta-send" disabled aria-label="Pošalji">
+            <svg id="dta-send-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+        <div class="dta-footer">Dog Trainer Assistant · AI powered</div>
+      </div>
+    </div>
+
+    <button id="dta-toggle" aria-label="Otvori chat">
+      <span class="dta-unread" id="dta-unread"></span>
+      <svg id="toggle-icon-chat" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      <svg id="toggle-icon-down" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </button>
+  </div>
+
+  <script>
+    // ─────────────────────────────────────────────
+    //  KONFIGURACIJA
+    //  Promenite API_URL na javni URL kada deploy-ujete
+    // ─────────────────────────────────────────────
+    const API_URL = "https://webbot-site1.onrender.com/api/chat";
+
+    const QUICK_SUGGESTIONS = [
+      "Koje usluge nudite?",
+      "Stene ne sluša – šta da radim?",
+      "Sa koliko meseci početi trening?",
+      "Kako zakazati termin?"
+    ];
+
+    const GREETING = "Zdravo! Ja sam Dog Trainer Assistant 🐕 Tu sam da vam pomognem sa pitanjima o dresuri i obuci pasa, našim uslugama i savetima za vas i vašeg ljubimca. Kako mogu da pomognem?";
+    // ─────────────────────────────────────────────
+
+    // Prikazi API URL na demo kartici
+    document.getElementById("api-url-display").textContent = "API: " + API_URL;
+
+    const win        = document.getElementById("dta-window");
+    const toggle     = document.getElementById("dta-toggle");
+    const closeBtn   = document.getElementById("dta-close-btn");
+    const messagesEl = document.getElementById("dta-messages");
+    const suggestEl  = document.getElementById("dta-suggestions");
+    const input      = document.getElementById("dta-input");
+    const sendBtn    = document.getElementById("dta-send");
+    const unreadDot  = document.getElementById("dta-unread");
+    const iconChat   = document.getElementById("toggle-icon-chat");
+    const iconDown   = document.getElementById("toggle-icon-down");
+
+    let isOpen    = false;
+    let isLoading = false;
+    let history   = [];
+    let suggestionsShown = true;
+
+    // ── Helpers ──────────────────────────────────
+
+    function uid() {
+      return Math.random().toString(36).slice(2, 9);
+    }
+
+    function scrollBottom() {
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    function setLoading(val) {
+      isLoading = val;
+      sendBtn.disabled = val || input.value.trim() === "";
+      const icon = document.getElementById("dta-send-icon");
+      if (val) {
+        icon.setAttribute("class", "spin");
+        icon.innerHTML = `<circle cx="12" cy="12" r="10" stroke="white" stroke-width="3.5" fill="none" stroke-dasharray="31.4" stroke-dashoffset="10"/>`;
+      } else {
+        icon.removeAttribute("class");
+        icon.innerHTML = `<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>`;
+      }
+    }
+
+    // ── Render messages ───────────────────────────
+
+    function appendMessage(role, text) {
+      const row = document.createElement("div");
+      row.className = "dta-row " + (role === "user" ? "user" : "bot");
+
+      if (role === "assistant") {
+        const av = document.createElement("div");
+        av.className = "dta-bubble-avatar";
+        av.textContent = "🐕";
+        row.appendChild(av);
+      }
+
+      const bubble = document.createElement("div");
+      bubble.className = "dta-bubble " + (role === "user" ? "user" : "bot");
+      bubble.innerHTML = text.replace(/\n/g, "<br>");
+      row.appendChild(bubble);
+
+      messagesEl.appendChild(row);
+      scrollBottom();
+      return row;
+    }
+
+    function showTyping() {
+      const row = document.createElement("div");
+      row.className = "dta-row bot dta-typing";
+      row.id = "dta-typing";
+
+      const av = document.createElement("div");
+      av.className = "dta-bubble-avatar";
+      av.textContent = "🐕";
+      row.appendChild(av);
+
+      const bubble = document.createElement("div");
+      bubble.className = "dta-bubble bot";
+      bubble.innerHTML = `<span class="dta-typing-dot"></span><span class="dta-typing-dot"></span><span class="dta-typing-dot"></span>`;
+      row.appendChild(bubble);
+
+      messagesEl.appendChild(row);
+      scrollBottom();
+    }
+
+    function hideTyping() {
+      const el = document.getElementById("dta-typing");
+      if (el) el.remove();
+    }
+
+    function showError(msg) {
+      const div = document.createElement("div");
+      div.className = "dta-error";
+      div.textContent = msg;
+      messagesEl.appendChild(div);
+      scrollBottom();
+    }
+
+    function buildSuggestions() {
+      suggestEl.innerHTML = "";
+      QUICK_SUGGESTIONS.forEach(s => {
+        const btn = document.createElement("button");
+        btn.className = "dta-suggestion";
+        btn.textContent = s;
+        btn.addEventListener("click", () => {
+          clearSuggestions();
+          sendMessage(s);
+        });
+        suggestEl.appendChild(btn);
+      });
+    }
+
+    function clearSuggestions() {
+      suggestEl.innerHTML = "";
+      suggestionsShown = false;
+    }
+
+    // ── Open / close ──────────────────────────────
+
+    function openChat() {
+      isOpen = true;
+      win.classList.remove("hidden");
+      unreadDot.style.display = "none";
+      iconChat.style.display = "none";
+      iconDown.style.display = "block";
+      setTimeout(() => input.focus(), 300);
+    }
+
+    function closeChat() {
+      isOpen = false;
+      win.classList.add("hidden");
+      iconChat.style.display = "block";
+      iconDown.style.display = "none";
+    }
+
+    toggle.addEventListener("click", () => isOpen ? closeChat() : openChat());
+    closeBtn.addEventListener("click", closeChat);
+
+    // ── Input ─────────────────────────────────────
+
+    input.addEventListener("input", () => {
+      sendBtn.disabled = input.value.trim() === "" || isLoading;
+      input.style.height = "auto";
+      input.style.height = Math.min(input.scrollHeight, 88) + "px";
+    });
+
+    input.addEventListener("keydown", e => {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        if (!sendBtn.disabled) doSend();
+      }
+    });
+
+    sendBtn.addEventListener("click", doSend);
+
+    function doSend() {
+      const text = input.value.trim();
+      if (!text || isLoading) return;
+      input.value = "";
+      input.style.height = "auto";
+      sendBtn.disabled = true;
+      if (suggestionsShown) clearSuggestions();
+      sendMessage(text);
+    }
+
+    // ── API call ──────────────────────────────────
+
+    async function sendMessage(text) {
+      appendMessage("user", text);
+      history.push({ role: "user", content: text });
+
+      setLoading(true);
+      showTyping();
+
+      try {
+        const res = await fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ messages: history.slice(-20) })
+        });
+
+        const data = await res.json();
+
+        hideTyping();
+
+        if (!res.ok || data.error) {
+          showError(data.error || "Greška. Pokušajte ponovo.");
+          history.pop();
+        } else {
+          appendMessage("assistant", data.message);
+          history.push({ role: "assistant", content: data.message });
+        }
+      } catch (err) {
+        hideTyping();
+        showError("Ne mogu da dostignem server. Proverite da li je server pokrenut.");
+        history.pop();
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // ── Init ──────────────────────────────────────
+
+    appendMessage("assistant", GREETING);
+    buildSuggestions();
+  </script>
+</body>
+</html>
